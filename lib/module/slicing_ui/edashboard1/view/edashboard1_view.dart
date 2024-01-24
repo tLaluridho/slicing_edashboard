@@ -139,14 +139,15 @@ class Edashboard1View extends StatefulWidget {
                             width: 400,
                             child: Row(
                               children: [
-                                Text(
-                                  "New Arrivals",
-                                  style: TextStyle(
-                                    fontSize: 30.0,
-                                    fontWeight: FontWeight.bold,
+                                Expanded(
+                                  child: Text(
+                                    "New Arrivals",
+                                    style: TextStyle(
+                                      fontSize: 30.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
-                                Spacer(),
                                 Text(
                                   "See All >",
                                   style: TextStyle(
