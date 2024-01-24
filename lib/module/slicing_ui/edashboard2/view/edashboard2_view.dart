@@ -158,6 +158,9 @@ class Edashboard2View extends StatefulWidget {
                                       Icons.chevron_right,
                                       size: 24.0,
                                     ),
+                                    const SizedBox(
+                                      height: 20.0,
+                                    ),
                                   ],
                                 ),
                               ],
