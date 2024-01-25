@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Edashboard2View(),
+      home: const Edashboard3View(),
       debugShowCheckedModeBanner: false,
     );
   }

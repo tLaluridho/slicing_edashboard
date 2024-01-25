@@ -132,14 +132,14 @@ class Edashboard1View extends StatefulWidget {
                             );
                           }).toList(),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
                           child: SizedBox(
                             height: 70,
                             width: 400,
                             child: Row(
                               children: [
-                                Expanded(
+                                const Expanded(
                                   child: Text(
                                     "New Arrivals",
                                     style: TextStyle(
@@ -148,10 +148,13 @@ class Edashboard1View extends StatefulWidget {
                                     ),
                                   ),
                                 ),
-                                Text(
-                                  "See All >",
-                                  style: TextStyle(
-                                    fontSize: 20.0,
+                                InkWell(
+                                  onTap: () {},
+                                  child: const Text(
+                                    "See All >",
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
                                   ),
                                 ),
                               ],

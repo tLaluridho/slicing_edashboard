@@ -106,11 +106,15 @@ class Edashboard2View extends StatefulWidget {
                           ),
                         ),
                         Text(
-                          "See All >",
+                          "See All",
                           style: TextStyle(
                             fontSize: 18.0,
-                            color: Colors.green,
+                            color: Colors.black,
                           ),
+                        ),
+                        Icon(
+                          Icons.chevron_right,
+                          size: 24.0,
                         ),
                       ],
                     ),
@@ -132,9 +136,9 @@ class Edashboard2View extends StatefulWidget {
                       itemBuilder: (BuildContext context, int index) {
                         var item = controller.categories[index];
                         return Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.all(
+                          decoration: BoxDecoration(
+                            color: Colors.grey[700],
+                            borderRadius: const BorderRadius.all(
                               Radius.circular(9.0),
                             ),
                           ),
@@ -165,6 +169,114 @@ class Edashboard2View extends StatefulWidget {
                                 ),
                               ],
                             ),
+                          ),
+                        );
+                      },
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(8.0),
+                      child: const Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              "Discount",
+                              style: TextStyle(
+                                fontSize: 30.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            "See All",
+                            style: TextStyle(
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          Icon(
+                            Icons.chevron_right,
+                            size: 24.0,
+                          ),
+                        ],
+                      ),
+                    ),
+                    GridView.builder(
+                      padding: EdgeInsets.zero,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        childAspectRatio: 1.0 / 1.8,
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 10,
+                      ),
+                      itemCount: controller.products.length,
+                      shrinkWrap: true,
+                      physics: const ScrollPhysics(),
+                      itemBuilder: (BuildContext context, int index) {
+                        var item = controller.products[index];
+                        return Container(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                        item["photo"],
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(
+                                        10.0,
+                                      ),
+                                    ),
+                                  ),
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: const Stack(
+                                      children: [
+                                        Positioned(
+                                          right: 8,
+                                          top: 5,
+                                          child: CircleAvatar(
+                                            backgroundColor: Colors.white,
+                                            child: Icon(
+                                              Icons.more_horiz,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 4.0,
+                              ),
+                              Text(
+                                item["product_name"],
+                                style: const TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                item["category"],
+                                style: const TextStyle(
+                                  fontSize: 15.0,
+                                ),
+                              ),
+                              Text(
+                                "\$${item["price"]}",
+                                style: const TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
                         );
                       },
