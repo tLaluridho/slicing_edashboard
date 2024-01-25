@@ -2,7 +2,8 @@
     "modules": [
         "slicing_ui/edashboard1",
         "slicing_ui/edashboard2",
-        "slicing_ui/edashboard3"
+        "slicing_ui/edashboard3",
+        "slicing_ui/edashboard4"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,
