@@ -11,4 +11,6 @@ export 'package:slicing_ui/module/slicing_ui/edashboard3/controller/edashboard3_
 export 'package:slicing_ui/module/slicing_ui/edashboard3/view/edashboard3_view.dart';
 export 'package:slicing_ui/module/slicing_ui/edashboard4/controller/edashboard4_controller.dart';
 export 'package:slicing_ui/module/slicing_ui/edashboard4/view/edashboard4_view.dart';
+export 'package:slicing_ui/module/slicing_ui/edashboard5/controller/edashboard5_controller.dart';
+export 'package:slicing_ui/module/slicing_ui/edashboard5/view/edashboard5_view.dart';
 export 'package:slicing_ui/state_util.dart';
