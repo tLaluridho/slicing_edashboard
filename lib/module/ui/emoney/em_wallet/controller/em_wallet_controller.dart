@@ -1,23 +1,38 @@
-
 import 'package:flutter/material.dart';
 import 'package:slicing_ui/core.dart';
 import '../view/em_wallet_view.dart';
 
 class EmWalletController extends State<EmWalletView> {
-    static late EmWalletController instance;
-    late EmWalletView view;
+  static late EmWalletController instance;
+  late EmWalletView view;
 
-    @override
-    void initState() {
-        instance = this;
-        super.initState();
-    }
+  @override
+  void initState() {
+    instance = this;
+    super.initState();
+  }
 
-    @override
-    void dispose() => super.dispose();
+  @override
+  void dispose() => super.dispose();
 
-    @override
-    Widget build(BuildContext context) => widget.build(context, this);
+  @override
+  Widget build(BuildContext context) => widget.build(context, this);
+
+  List expenses = [
+    {
+      "icon": Icons.wallet,
+      "title": "Main pocket",
+      "ammount": 5000,
+    },
+    {
+      "icon": Icons.house,
+      "title": "House",
+      "ammount": 8000,
+    },
+    {
+      "icon": Icons.holiday_village,
+      "title": "Holiday",
+      "ammount": 10000,
+    },
+  ];
 }
-        
-    
