@@ -230,22 +230,29 @@ class EmWalletView extends StatefulWidget {
                   ),
                 ],
               ),
-              const ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    "https://i.ibb.co/PGv8ZzG/me.jpg",
-                  ),
-                ),
-                title: Text("John doe"),
-                subtitle: Text("john.doe@gmail.com"),
-                trailing: Text(
-                  "text",
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.red,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
+              ListView.builder(
+                itemCount: controller.balances.length,
+                shrinkWrap: true,
+                padding: EdgeInsets.zero,
+                clipBehavior: Clip.none,
+                itemBuilder: (context, index) {
+                  var item = controller.balances[index];
+                  return ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: NetworkImage(item["photo"]),
+                    ),
+                    title: Text(item["product_name"]),
+                    subtitle: Text(item["category"]),
+                    trailing: Text(
+                      item["price"].toString(),
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: item["price"] < 0 ? Colors.red : Colors.green,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                  );
+                },
               ),
             ],
           ),

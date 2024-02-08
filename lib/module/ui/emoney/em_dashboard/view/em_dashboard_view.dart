@@ -20,7 +20,7 @@ class EmDashboardView extends StatefulWidget {
           title: Text(
             "Welcome Back",
             style: TextStyle(
-              color: Colors.grey[500],
+              color: Colors.grey[600],
             ),
           ),
           subtitle: const Text(
